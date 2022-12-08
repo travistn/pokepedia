@@ -10,7 +10,7 @@ const PokemonCard = ({ pokemon }) => {
       <h4 className='capitalize text-blue-600 font-bold text-[18px]'>{pokemon?.name}</h4>
       <div className='flex flex-row gap-1 mt-1'>
         {pokemon?.types.map((type) => (
-          <TypeCard type={type?.type} />
+          <TypeCard type={type?.type} key={type?.type.name} />
         ))}
       </div>
     </div>
