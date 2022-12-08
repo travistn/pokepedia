@@ -7,19 +7,26 @@ import TypeCard from '../components/TypeCard';
 const Home = () => {
   const [pokemon, setPokemon] = useState();
   const [types, setTypes] = useState([]);
+  const [randomNumber, setRandomNumber] = useState();
 
   useEffect(() => {
-    axios.get(`https://pokeapi.co/api/v2/pokemon/pikachu`).then((res) => setPokemon(res.data));
-  }, []);
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`)
+      .then((res) => setPokemon(res.data));
+  }, [randomNumber]);
 
   useEffect(() => {
     axios.get('https://pokeapi.co/api/v2/type/?limit=18').then((res) => setTypes(res.data.results));
   }, []);
 
+  useEffect(() => {
+    setRandomNumber(Math.floor(Math.random() * 905 + 1));
+  }, []);
+
   return (
     <div className='flex flex-col items-center'>
       <div className='flex flex-col mt-8 w-11/12 items-center gap-8'>
-        <div className='bg-gray-200 rounded-[4px] p-4'>
+        <div className='bg-gray-200 rounded-[4px] p-4 w-full lg:text-center'>
           <h2 className='font-bold'>
             Welcome to PokéPedia!{' '}
             <span className='font-normal'>
@@ -27,7 +34,7 @@ const Home = () => {
             </span>
           </h2>
         </div>
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center bg-gray-200 w-full rounded-[4px] pt-4 pb-4'>
           <h2 className='font-bold text-[18px]'>Pokémon of the day</h2>
           <div className='mt-4'>
             <PokemonCard pokemon={pokemon} />
