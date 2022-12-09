@@ -34,8 +34,8 @@ const Home = () => {
             </span>
           </h2>
         </div>
-        <div className='flex flex-col items-center bg-white w-full rounded-md p-4 lg:w-11/12'>
-          <h2 className='font-bold text-[18px]'>Pokémon of the day</h2>
+        <div className='flex flex-col items-center bg-white w-full rounded-md p-4 lg:w-[60%]'>
+          <h2 className='font-bold text-[18px] lg:text-[20px]'>Pokémon of the day</h2>
           <div className='mt-4'>
             <PokemonCard pokemon={pokemon} />
           </div>
