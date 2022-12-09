@@ -24,9 +24,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='flex flex-col items-center'>
-      <div className='flex flex-col mt-8 w-11/12 items-center gap-8'>
-        <div className='bg-gray-200 rounded-[4px] p-4 w-full lg:text-center'>
+    <div className='h-screen flex flex-col items-center bg-[#d2e1f2] lg:bg-poke-bg bg-no-repeat bg-contain'>
+      <div className='flex flex-col mt-8 w-10/12 lg:w-7/12 items-center gap-8 lg:bg-[#ACC8E5] lg:p-8 lg:rounded-md'>
+        <div className='bg-white lg:bg-[#e6eff9] rounded-md p-4 w-full lg:text-center lg:w-11/12'>
           <h2 className='font-bold'>
             Welcome to PokéPedia!{' '}
             <span className='font-normal'>
@@ -34,13 +34,13 @@ const Home = () => {
             </span>
           </h2>
         </div>
-        <div className='flex flex-col items-center bg-gray-200 w-full rounded-[4px] pt-4 pb-4'>
+        <div className='flex flex-col items-center bg-white lg:bg-[#e6eff9] w-full rounded-md p-4 lg:w-11/12'>
           <h2 className='font-bold text-[18px]'>Pokémon of the day</h2>
           <div className='mt-4'>
             <PokemonCard pokemon={pokemon} />
           </div>
         </div>
-        <div className='flex flex-col items-center gap-4 lg:w-[45%]'>
+        <div className='flex flex-col items-center gap-4 lg:w-[60%] bg-white lg:bg-[#e6eff9] rounded-md p-4 lg:pt-8 lg:pb-8'>
           <h1 className='font-bold text-[18px] lg:text-[20px]'>Pokémon Types</h1>
           <div className='flex flex-row flex-wrap gap-1 flex-1 justify-center'>
             {types?.map((type) => (
