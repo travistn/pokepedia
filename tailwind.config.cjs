@@ -23,6 +23,9 @@ module.exports = {
         steel: '#aaaabb',
         fairy: '#ee99ee',
       },
+      backgroundImage: {
+        'poke-bg': 'url(../src/assets/poke-bg.png)',
+      },
     },
   },
   safelist: [
