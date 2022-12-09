@@ -7,10 +7,10 @@ const PokemonCard = ({ pokemon }) => {
     <div className='flex flex-col items-center'>
       <img
         src={pokemon?.sprites.other['official-artwork'].front_default}
-        className='h-[170px] lg:h-[220px]'
+        className='h-[170px] lg:h-[220px] hover:cursor-pointer hover:opacity-90'
       />
-      <p className='text-[14px] lg:text-[15px] opacity-70'>{`#${pokemon?.id}`}</p>
-      <h4 className='capitalize text-blue-600 font-bold text-[18px] lg:text-[22px]'>
+      <p className='text-[14px] lg:text-[15px] opacity-70 hover:underline hover:cursor-pointer'>{`#${pokemon?.id}`}</p>
+      <h4 className='capitalize text-blue-600 font-bold text-[18px] lg:text-[22px] hover:underline hover:cursor-pointer'>
         {pokemon?.name}
       </h4>
       <div className='flex flex-row gap-1 mt-1'>
