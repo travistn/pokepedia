@@ -30,7 +30,7 @@ module.exports = {
   },
   safelist: [
     {
-      pattern: /bg-./,
+      pattern: /(bg|text)-./,
     },
   ],
   plugins: [],
