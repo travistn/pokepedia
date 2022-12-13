@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 import PokemonCard from '../components/PokemonCard';
 import TypeCard from '../components/TypeCard';
+import { useGetPokemonByNameQuery, useGetPokemonTypesQuery } from '../redux/pokemon';
 
 const Home = () => {
-  const [pokemon, setPokemon] = useState();
-  const [types, setTypes] = useState([]);
-  const [randomNumber, setRandomNumber] = useState();
-
-  useEffect(() => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${randomNumber}`)
-      .then((res) => setPokemon(res.data));
-  }, [randomNumber]);
-
-  useEffect(() => {
-    axios.get('https://pokeapi.co/api/v2/type/?limit=18').then((res) => setTypes(res.data.results));
-  }, []);
-
-  useEffect(() => {
-    setRandomNumber(Math.floor(Math.random() * 905 + 1));
-  }, []);
+  const { data: pokemon } = useGetPokemonByNameQuery('bulbasaur');
+  const { data: types } = useGetPokemonTypesQuery();
 
   return (
     <div className='h-screen flex flex-col items-center bg-[#d2e1f2] lg:bg-poke-bg bg-no-repeat bg-contain'>
@@ -43,7 +28,7 @@ const Home = () => {
         <div className='flex flex-col items-center gap-4 lg:w-[60%] bg-white  rounded-md p-4 lg:pt-8 lg:pb-8'>
           <h1 className='font-bold text-[18px] lg:text-[20px]'>Pokémon Types</h1>
           <div className='flex flex-row flex-wrap gap-1 flex-1 justify-center'>
-            {types?.map((type) => (
+            {types?.results?.map((type) => (
               <TypeCard type={type} key={type?.name} />
             ))}
           </div>
