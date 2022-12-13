@@ -2,7 +2,7 @@ import React from 'react';
 
 import PokemonCard from '../components/PokemonCard';
 import TypeCard from '../components/TypeCard';
-import { useGetPokemonByNameQuery, useGetPokemonTypesQuery } from '../redux/pokemon';
+import { useGetPokemonByNameQuery, useGetPokemonTypesQuery } from '../redux/slices/pokemonApi';
 
 const Home = () => {
   const { data: pokemon } = useGetPokemonByNameQuery('bulbasaur');
