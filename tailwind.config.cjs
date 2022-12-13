@@ -22,6 +22,7 @@ module.exports = {
         dark: '#775544',
         steel: '#aaaabb',
         fairy: '#ee99ee',
+        'sky-blue': '#d2e1f2',
       },
       backgroundImage: {
         'poke-bg': 'url(../src/assets/poke-bg.png)',
