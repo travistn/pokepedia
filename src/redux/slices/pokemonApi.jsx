@@ -10,7 +10,19 @@ export const pokemonApi = createApi({
     getPokemonTypes: builder.query({
       query: () => 'type/?limit=18',
     }),
+    getPokemonGeneration: builder.query({
+      async queryFn(pokeId, _queryApi, _extraOptions, fetchWithBQ) {
+        const speciesResult = await fetchWithBQ(
+          `https://pokeapi.co/api/v2/pokemon-species/${pokeId}`
+        );
+        const generationResult = await fetchWithBQ(
+          `generation/${speciesResult.data.generation.name}`
+        );
+        return generationResult;
+      },
+    }),
   }),
 });
 
-export const { useGetPokemonByNameQuery, useGetPokemonTypesQuery } = pokemonApi;
+export const { useGetPokemonByNameQuery, useGetPokemonTypesQuery, useGetPokemonGenerationQuery } =
+  pokemonApi;
