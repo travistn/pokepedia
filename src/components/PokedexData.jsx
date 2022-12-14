@@ -5,6 +5,8 @@ import { decimeterToFeet } from '../reuseables/decimeterToFeet';
 import { hectogramsToPounds } from '../reuseables/hectogramsToPounds';
 
 const PokedexData = ({ pokemon, species }) => {
+  console.log(pokemon);
+
   const pokemonGenderRatio = (genderRate) => {
     if (genderRate !== -1) {
       return (
@@ -60,9 +62,9 @@ const PokedexData = ({ pokemon, species }) => {
         <span className='font-normal'>{species?.capture_rate}</span>
       </p>
       <div className='flex flex-row'>
-        <p className='flex flex-row gap-1 font-bold'>
+        <div className='flex flex-row gap-1 font-bold'>
           Gender: {pokemonGenderRatio(species?.gender_rate)}
-        </p>
+        </div>
       </div>
     </div>
   );
