@@ -9,7 +9,7 @@ const Home = () => {
   const { data: types } = useGetPokemonTypesQuery();
 
   return (
-    <div className='h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
+    <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
       <div className='flex flex-col mt-8 w-10/12 lg:w-7/12 items-center gap-8 lg:bg-dark-light-blue lg:p-8 lg:rounded-md'>
         <div className='bg-white rounded-md p-4 w-full lg:text-center lg:w-11/12'>
           <h2 className='font-bold'>
