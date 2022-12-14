@@ -6,6 +6,7 @@ import {
   useGetPokemonGenerationQuery,
   useGetPokemonSpeciesQuery,
 } from '../redux/slices/pokemonApi';
+import PokedexData from '../components/PokedexData';
 
 const Pokemon = () => {
   const { pokeId } = useParams();
@@ -16,7 +17,7 @@ const Pokemon = () => {
 
   return (
     <div className='h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <div className='bg-white w-10/12 lg:w-7/12 mt-8 rounded-md flex flex-col items-center p-4'>
+      <div className='bg-white w-10/12 lg:w-7/12 mt-8 rounded-md flex flex-col p-4 gap-8 items-center'>
         <div className='flex flex-col items-center'>
           <h2 className='capitalize text-[24px] lg:text-[30px] font-bold'>{pokemon?.name}</h2>
           <img
@@ -32,8 +33,11 @@ const Pokemon = () => {
             ))}{' '}
             type pokemon introduced in{' '}
             {generation?.names.find((item) => item.language.name === 'en').name}. It is known as the{' '}
-            {species?.genera.find((item) => item.language.name === 'en').genus}
+            {species?.genera.find((item) => item.language.name === 'en').genus}.
           </p>
+        </div>
+        <div>
+          <PokedexData pokemon={pokemon} species={species} />
         </div>
       </div>
     </div>
