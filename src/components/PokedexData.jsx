@@ -5,8 +5,6 @@ import { decimeterToFeet } from '../reuseables/decimeterToFeet';
 import { hectogramsToPounds } from '../reuseables/hectogramsToPounds';
 
 const PokedexData = ({ pokemon, species }) => {
-  console.log(pokemon);
-
   const pokemonGenderRatio = (genderRate) => {
     if (genderRate !== -1) {
       return (
