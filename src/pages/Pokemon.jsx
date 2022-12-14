@@ -19,7 +19,7 @@ const Pokemon = () => {
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
       <div
         className={`bg-${pokemon?.types[0].type.name} w-10/12 lg:w-7/12 mt-8 rounded-md flex flex-col p-4 gap-4 items-center`}>
-        <div className='flex flex-col items-center bg-white rounded-md p-4'>
+        <div className='flex flex-col items-center bg-white rounded-md p-4 w-full'>
           <h2 className='capitalize text-[24px] lg:text-[30px] font-bold'>{pokemon?.name}</h2>
           <img
             src={pokemon?.sprites.other['official-artwork'].front_default}
