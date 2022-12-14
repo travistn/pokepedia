@@ -9,7 +9,7 @@ module.exports = {
         water: '#3399ff',
         electric: '#ffcc33',
         grass: '#77cc55',
-        ice: '#66ccff',
+        ice: '#96D9D6',
         fighting: '#bb5544',
         poison: '#aa5599',
         ground: '#ddbb55',
