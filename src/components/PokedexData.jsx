@@ -8,9 +8,10 @@ const PokedexData = ({ pokemon, species }) => {
   const pokemonGenderRatio = (genderRate) => {
     if (genderRate !== -1) {
       return (
-        <div className='flex flex-row gap-1 font-normal'>
-          <p className='text-blue-600'>{((8 - genderRate) / 8) * 100}% male,</p>
-          <p className='text-pink-500'>{(genderRate / 8) * 100}% female</p>
+        <div className='flex flex-row font-normal'>
+          <p className='text-blue-600'>{((8 - genderRate) / 8) * 100}% male</p>
+          <span>{`, `}</span>
+          <p className='text-pink-500 ml-1'>{(genderRate / 8) * 100}% female</p>
         </div>
       );
     } else {
