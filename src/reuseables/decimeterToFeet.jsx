@@ -1,3 +1,3 @@
-export const decimeterToFeet = (pokemon) => {
-  return ((pokemon * 3.937) / 12).toFixed(2);
+export const decimeterToFeet = (dm) => {
+  return ((dm * 3.937) / 12).toFixed(2);
 };
