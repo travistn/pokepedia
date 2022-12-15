@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Pokemon from './pages/Pokemon';
+import PokedexDirectory from './pages/PokedexDirectory';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/pokemon/:pokeId' element={<Pokemon />} />
+        <Route path='/pokedex' element={<PokedexDirectory />} />
       </Routes>
     </>
   );
