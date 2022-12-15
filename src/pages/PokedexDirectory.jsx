@@ -6,7 +6,7 @@ const PokedexDirectory = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <div className='flex flex-col items-center w-10/12 mt-8 gap-8'>
+      <div className='flex flex-col items-center w-10/12 mt-8 gap-8 lg:w-7/12 lg:bg-dark-light-blue rounded-md lg:p-8'>
         <div className='w-full flex flex-col bg-white rounded-md p-4'>
           <h1 className='text-[22px] font-bold text-center'>Pokémon Pokédex</h1>
           <p className='mt-4'>
