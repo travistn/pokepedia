@@ -24,6 +24,9 @@ export const pokemonApi = createApi({
     getPokemonSpecies: builder.query({
       query: (pokeId) => `pokemon-species/${pokeId}`,
     }),
+    getPokeDex: builder.query({
+      query: (region) => `pokedex/${region}`,
+    }),
   }),
 });
 
@@ -32,4 +35,5 @@ export const {
   useGetPokemonTypesQuery,
   useGetPokemonGenerationQuery,
   useGetPokemonSpeciesQuery,
+  useGetPokeDexQuery,
 } = pokemonApi;
