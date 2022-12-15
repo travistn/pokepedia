@@ -21,6 +21,14 @@ const BaseStats = ({ pokemon }) => {
           </div>
         </div>
       ))}
+      <div className='flex flex-row pl-2 pr-2 font-bold text-[15px] w-[40.2%]'>
+        <p>Total</p>
+        <p className='ml-auto'>
+          {pokemon?.stats
+            .map((stat) => stat?.base_stat)
+            .reduce((prevStat, currentStat) => prevStat + currentStat, 0)}
+        </p>
+      </div>
     </div>
   );
 };
