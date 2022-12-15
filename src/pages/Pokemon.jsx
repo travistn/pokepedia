@@ -7,6 +7,7 @@ import {
   useGetPokemonSpeciesQuery,
 } from '../redux/slices/pokemonApi';
 import PokedexData from '../components/PokedexData';
+import BaseStats from '../components/BaseStats';
 
 const Pokemon = () => {
   const { pokeId } = useParams();
@@ -39,6 +40,9 @@ const Pokemon = () => {
         </div>
         <div className='bg-white w-full rounded-md p-4'>
           <PokedexData pokemon={pokemon} species={species} />
+        </div>
+        <div className='bg-white w-full rounded-md p-4'>
+          <BaseStats pokemon={pokemon} />
         </div>
       </div>
     </div>
