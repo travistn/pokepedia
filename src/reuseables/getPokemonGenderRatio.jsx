@@ -1,4 +1,4 @@
-export const pokemonGenderRatio = (genderRate) => {
+export const getPokemonGenderRatio = (genderRate) => {
   if (genderRate !== -1) {
     return (
       <div className='flex flex-row font-normal'>
