@@ -25,7 +25,7 @@ const Home = () => {
             <PokemonCard pokemon={pokemon} />
           </div>
         </div>
-        <div className='flex flex-col items-center gap-4 lg:w-[60%] bg-white  rounded-md p-4 lg:pt-8 lg:pb-8'>
+        <div className='flex flex-col items-center gap-4 lg:w-[60%] bg-white rounded-md p-4 lg:pt-8 lg:pb-8'>
           <h1 className='font-bold text-[18px] lg:text-[20px]'>Pokémon Types</h1>
           <div className='flex flex-row flex-wrap gap-1 flex-1 justify-center'>
             {types?.results?.map((type) => (

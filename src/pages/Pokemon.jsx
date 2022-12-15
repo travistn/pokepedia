@@ -38,11 +38,13 @@ const Pokemon = () => {
             {species?.genera.find((item) => item.language.name === 'en').genus}.
           </p>
         </div>
-        <div className='bg-white w-full rounded-md p-4'>
-          <PokedexData pokemon={pokemon} species={species} />
-        </div>
-        <div className='bg-white w-full rounded-md p-4'>
-          <BaseStats pokemon={pokemon} />
+        <div className='flex flex-col lg:flex-row gap-4 w-full'>
+          <div className='bg-white w-full rounded-md p-4'>
+            <PokedexData pokemon={pokemon} species={species} />
+          </div>
+          <div className='bg-white w-full rounded-md p-4'>
+            <BaseStats pokemon={pokemon} />
+          </div>
         </div>
       </div>
     </div>

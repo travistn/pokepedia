@@ -7,7 +7,7 @@ import { getPokemonGenderRatio } from '../reuseables/getPokemonGenderRatio';
 
 const PokedexData = ({ pokemon, species }) => {
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 w-full'>
       <h1 className='text-center text-[20px] lg:text-[24px] font-bold'>Pokédex Data</h1>
       <p className='font-bold lg:text-[18px]'>
         National No.<span className='font-normal'> {pokemon?.id}</span>
