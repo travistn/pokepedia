@@ -7,5 +7,9 @@ export const store = configureStore({
     [pokemonApi.reducerPath]: pokemonApi.reducer,
   },
 
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(pokemonApi.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      immutableCheck: false,
+      serializableCheck: false,
+    }).concat(pokemonApi.middleware),
 });
