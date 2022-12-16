@@ -12,14 +12,15 @@ const PokedexTypeCard = ({ pokemon }) => {
           {pokedexData?.types.map((type) => (
             <p
               key={type?.type.name}
-              className={`w-[50%] bg-${type?.type.name} capitalize text-white p-2`}>
+              className={`w-[50%] bg-${type?.type.name} capitalize text-white p-2 lg:text-[16px]`}>
               {type?.type.name}
             </p>
           ))}
         </div>
       ) : (
         <div>
-          <p className={`w-full bg-${pokedexData?.types[0].type.name} capitalize text-white p-2`}>
+          <p
+            className={`w-full bg-${pokedexData?.types[0].type.name} capitalize text-white p-2 lg:text-[16px]`}>
             {pokedexData?.types[0].type.name}
           </p>
         </div>
