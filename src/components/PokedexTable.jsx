@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import PokemonSprite from './PokemonSprite';
 import PokedexTypeCard from './PokedexTypeCard';
 
 const PokedexTable = ({ pokedex }) => {
+  const navigate = useNavigate();
+
   return (
     <table className='w-full border-black border-2 bg-white table-auto'>
       <thead className='bg-gray-800'>
@@ -29,7 +32,11 @@ const PokedexTable = ({ pokedex }) => {
             <td className='text-center'>
               {<PokemonSprite pokemon={pokemon?.pokemon_species.name} />}
             </td>
-            <td className='capitalize text-left'>{pokemon?.pokemon_species.name}</td>
+            <td
+              className='capitalize text-left'
+              onClick={() => navigate(`/pokemon/${pokemon?.pokemon_species.name}`)}>
+              {pokemon?.pokemon_species.name}
+            </td>
             <td>
               <PokedexTypeCard pokemon={pokemon?.pokemon_species.name} />
             </td>
