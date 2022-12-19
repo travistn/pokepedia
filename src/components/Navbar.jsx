@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { TbPokeball } from 'react-icons/tb';
 
 import spheal from '../assets/spheal.png';
 import pokeball from '../assets/pokeball.png';
@@ -18,15 +17,15 @@ const Navbar = () => {
   return (
     <>
       <div className='h-[70px] lg:h-[90px] bg-[#0d293a] flex flex-row justify-center'>
-        <div className='flex flex-row items-center justify-center w-[80%]'>
+        <div className='flex flex-row items-center justify-center lg:justify-start w-[80%] lg:w-7/12'>
           <GiHamburgerMenu
             color='white'
             className='text-[20px] mr-8 lg:hidden'
             onClick={() => setMenuIsOpen(!menuIsOpen)}
           />
-          <div className='flex flex-row items-center'>
+          <div className='flex flex-row items-center lg:pl-4'>
             <h5
-              className='text-[20px] lg:text-[26px] text-white cursor-pointer'
+              className='text-[20px] lg:text-[28px] text-white cursor-pointer'
               onClick={() => navigate('/')}>
               PokéPedia
             </h5>
@@ -35,6 +34,11 @@ const Navbar = () => {
               className='w-[70px] lg:w-[90px] h-[70px] lg:h-[90px] ml-2 cursor-pointer'
               onClick={() => navigate('/')}
             />
+          </div>
+          <div className='hidden lg:flex flex-row ml-10'>
+            <Link to='/pokedex' className='text-white text-[20px] hover:underline'>
+              Pokédex
+            </Link>
           </div>
         </div>
       </div>
