@@ -7,6 +7,9 @@ export const pokemonApi = createApi({
     getPokemonByName: builder.query({
       query: (name) => `pokemon/${name}`,
     }),
+    getPokemonType: builder.query({
+      query: (type) => `type/${type}`,
+    }),
     getPokemonTypes: builder.query({
       query: () => 'type/?limit=18',
     }),
@@ -32,6 +35,7 @@ export const pokemonApi = createApi({
 
 export const {
   useGetPokemonByNameQuery,
+  useGetPokemonTypeQuery,
   useGetPokemonTypesQuery,
   useGetPokemonGenerationQuery,
   useGetPokemonSpeciesQuery,
