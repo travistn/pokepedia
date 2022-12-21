@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import TypeCard from './TypeCard';
 import { decimeterToFeet } from '../reuseables/decimeterToFeet';
@@ -6,6 +7,8 @@ import { hectogramsToPounds } from '../reuseables/hectogramsToPounds';
 import { getPokemonGenderRatio } from '../reuseables/getPokemonGenderRatio';
 
 const PokedexData = ({ pokemon, species }) => {
+  const navigate = useNavigate();
+
   return (
     <div className='flex flex-col gap-2 w-full'>
       <h1 className='text-center text-[20px] lg:text-[24px] font-bold'>Pokédex Data</h1>
@@ -36,7 +39,10 @@ const PokedexData = ({ pokemon, species }) => {
         <p className='font-bold lg:text-[18px]'>Abilities:</p>
         <div className='flex flex-col ml-2'>
           {pokemon?.abilities.map((ability, index) => (
-            <p key={index} className='capitalize'>
+            <p
+              key={index}
+              className='capitalize hover:underline hover:cursor-pointer hover:text-blue-800'
+              onClick={() => navigate(`/ability/${ability?.ability.name}`)}>
               {ability?.ability.name.split('-').join(' ') +
                 (ability?.is_hidden === true ? '(hidden ability)' : '')}
             </p>
