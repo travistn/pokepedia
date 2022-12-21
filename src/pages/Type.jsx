@@ -15,7 +15,9 @@ const Type = () => {
         <h1
           className={`flex flex-row items-center justify-center capitalize text-[26px] lg:text-[34px] font-bold bg-white text-${type?.name} w-full pt-2 pb-2 rounded-md`}>
           {type?.name}
-          <span className='lowercase text-gray-400 text-[22px] font-normal'>{'(type)'}</span>
+          <span className='lowercase text-gray-400 text-[22px] lg:text-[26px] font-normal'>
+            {'(type)'}
+          </span>
         </h1>
         <div className='flex flex-row w-full items-center justify-center bg-white rounded-md gap-4 pt-2 pb-2'>
           <div className='flex flex-col items-center'>
