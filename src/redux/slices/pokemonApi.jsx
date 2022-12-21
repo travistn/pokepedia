@@ -30,6 +30,9 @@ export const pokemonApi = createApi({
     getPokeDex: builder.query({
       query: (region) => `pokedex/${region}`,
     }),
+    getPokemonAbility: builder.query({
+      query: (ability) => `ability/${ability}`,
+    }),
   }),
 });
 
@@ -40,4 +43,5 @@ export const {
   useGetPokemonGenerationQuery,
   useGetPokemonSpeciesQuery,
   useGetPokeDexQuery,
+  useGetPokemonAbilityQuery,
 } = pokemonApi;
