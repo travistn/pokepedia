@@ -11,7 +11,7 @@ const Type = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <div className='w-10/12 lg:w-7/12 mt-8 rounded-md flex flex-col p-4 gap-8 items-center'>
+      <div className='w-10/12 lg:w-7/12 mt-8 flex flex-col gap-8'>
         <div className='flex flex-col w-full items-center justify-center bg-white rounded-md gap-4 py-2'>
           <h1
             className={`flex flex-row items-center justify-center capitalize text-[26px] lg:text-[34px] font-bold bg-white text-${type?.name} w-full pt-2 pb-2 rounded-md`}>
