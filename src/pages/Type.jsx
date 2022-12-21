@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import TypeAttackDefense from '../components/TypeAttackDefense';
+import TypePokemonCard from '../components/TypePokemonCard';
 import { useGetPokemonTypeQuery } from '../redux/slices/pokemonApi';
 
 const Type = () => {
@@ -36,6 +37,16 @@ const Type = () => {
         </div>
         <div className='p-4 bg-white rounded-md w-full'>
           <TypeAttackDefense type={type} />
+        </div>
+        <div className='bg-white rounded-md w-full p-8'>
+          <h1 className={`capitalize text-center text-[22px] font-bold text-${type?.name}`}>
+            {type?.name} Pokémon
+          </h1>
+          <div className='flex flex-col gap-6 mt-6'>
+            {type?.pokemon.map((pokemon) => (
+              <TypePokemonCard pokemon={pokemon?.pokemon.name} key={pokemon?.pokemon.name} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
