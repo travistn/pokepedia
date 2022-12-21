@@ -41,10 +41,11 @@ const Type = () => {
           <TypeAttackDefense type={type} />
         </div>
         <div className='bg-white rounded-md w-full p-8'>
-          <h1 className={`capitalize text-center text-[22px] font-bold text-${type?.name}`}>
+          <h1
+            className={`capitalize text-center text-[22px] lg:text-[26px] font-bold text-${type?.name}`}>
             {type?.name} Pokémon
           </h1>
-          <div className='flex flex-col gap-6 mt-6'>
+          <div className='flex flex-col gap-6 mt-6 lg:flex-row lg:flex-wrap lg:gap-y-16 lg:mt-12'>
             {type?.pokemon.map((pokemon) => (
               <TypePokemonCard pokemon={pokemon?.pokemon.name} key={pokemon?.pokemon.name} />
             ))}
