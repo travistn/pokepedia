@@ -30,7 +30,9 @@ const PokedexTable = ({ pokedex }) => {
           <tr key={pokemon?.pokemon_species.name} className='border-b-2 border-black text-sm'>
             <td className='pl-1 lg:text-[18px]'>#{pokemon?.entry_number}</td>
             <td className='text-center lg:pl-8'>
-              {<PokemonSprite pokemon={pokemon?.pokemon_species.name} />}
+              <div className='h-[90px] w-[90px] lg:h-[140px] lg:w-[140px] flex flex-col'>
+                <PokemonSprite pokemon={pokemon?.pokemon_species.name} />
+              </div>
             </td>
             <td
               className='capitalize text-left lg:text-[18px] hover:cursor-pointer  hover:underline hover:text-blue-800'
