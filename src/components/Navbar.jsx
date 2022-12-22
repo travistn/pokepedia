@@ -35,19 +35,26 @@ const Navbar = () => {
               onClick={() => navigate('/')}
             />
           </div>
-          <div className='hidden lg:flex flex-row ml-10'>
+          <div className='hidden lg:flex flex-row gap-4 ml-10'>
             <Link to='/pokedex' className='text-white text-[20px] hover:underline'>
               Pokédex
+            </Link>
+            <Link to='/ability' className='text-white text-[20px] hover:underline'>
+              Abilities
             </Link>
           </div>
         </div>
       </div>
       {menuIsOpen && (
         <div className='absolute left-0 h-[60%] w-[70%] bg-gray-700 z-50 p-8'>
-          <div className='flex flex-col text-white text-[18px]'>
+          <div className='flex flex-col gap-4 text-white text-[18px]'>
             <div className='flex flex-row items-center gap-2'>
               <img src={pokeball} className='h-[18px]' />
               <Link to='/pokedex'>Pokédex</Link>
+            </div>
+            <div className='flex flex-row items-center gap-2'>
+              <img src={pokeball} className='h-[18px]' />
+              <Link to='/ability'>Abilities</Link>
             </div>
           </div>
         </div>
