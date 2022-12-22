@@ -36,7 +36,7 @@ const PokemonAbilityTable = ({ pokemon }) => {
               {poke?.pokemon.url.substring(34).split('/').join('')}
             </td>
             <td>
-              <div className='h-[70px] w-[70px] lg:h-[90px] lg:w-[90px] lg:hover:opacity-80'>
+              <div className='h-[70px] w-[70px] lg:h-[90px] lg:w-[90px]'>
                 <PokemonSprite pokemon={poke?.pokemon.name} />
               </div>
             </td>

@@ -11,7 +11,7 @@ const PokemonSprite = ({ pokemon }) => {
     <>
       <img
         src={pokemonData?.sprites.front_default}
-        className='hover:cursor-pointer'
+        className='hover:cursor-pointer lg:hover:opacity-80'
         onClick={() => navigate(`/pokemon/${pokemonData?.name}`)}
       />
     </>
