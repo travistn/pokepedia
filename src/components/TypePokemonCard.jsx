@@ -11,7 +11,7 @@ const TypePokemonCard = ({ pokemon }) => {
     <div className='flex flex-row items-center lg:w-[180px]'>
       <img
         src={pokemonData?.sprites.front_default}
-        className='h-[70px] lg:h-[80px] hover:cursor-pointer'
+        className='h-[70px] lg:h-[80px] hover:cursor-pointer lg:hover:opacity-80'
         onClick={() => navigate(`/pokemon/${pokemonData?.name}`)}
       />
       <div className='flex flex-col ml-2'>
