@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import {
   useGetPokemonByNameQuery,
@@ -11,6 +11,7 @@ import BaseStats from '../components/BaseStats';
 
 const Pokemon = () => {
   const { pokeId } = useParams();
+  const navigate = useNavigate();
 
   const { data: pokemon } = useGetPokemonByNameQuery(pokeId);
   const { data: generation } = useGetPokemonGenerationQuery(pokemon?.id);
@@ -29,7 +30,10 @@ const Pokemon = () => {
           <p className='lg:text-[18px]'>
             <span className='capitalize'>{pokemon?.name}</span> is a{' '}
             {pokemon?.types.map((type, index) => (
-              <span key={index} className={`capitalize text-${type?.type.name}`}>
+              <span
+                key={index}
+                className={`capitalize text-${type?.type.name} hover:underline hover:cursor-pointer`}
+                onClick={() => navigate(`/type/${type?.type.name}`)}>
                 {(index ? '/' : '') + type?.type.name}
               </span>
             ))}{' '}
