@@ -7,6 +7,7 @@ import Pokemon from './pages/Pokemon';
 import PokedexDirectory from './pages/PokedexDirectory';
 import Pokedex from './pages/Pokedex';
 import Type from './pages/Type';
+import AbilityDirectory from './pages/AbilityDirectory';
 import Ability from './pages/Ability';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/pokedex' element={<PokedexDirectory />} />
         <Route path='/pokedex/:pokeRegion' element={<Pokedex />} />
         <Route path='/type/:typeId' element={<Type />} />
+        <Route path='/ability' element={<AbilityDirectory />} />
         <Route path='/ability/:abilityId' element={<Ability />} />
       </Routes>
     </>
