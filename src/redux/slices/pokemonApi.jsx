@@ -33,6 +33,9 @@ export const pokemonApi = createApi({
     getPokemonAbility: builder.query({
       query: (ability) => `ability/${ability}`,
     }),
+    getPokemonAbilities: builder.query({
+      query: () => 'ability?&limit=1000',
+    }),
   }),
 });
 
@@ -44,4 +47,5 @@ export const {
   useGetPokemonSpeciesQuery,
   useGetPokeDexQuery,
   useGetPokemonAbilityQuery,
+  useGetPokemonAbilitiesQuery,
 } = pokemonApi;
