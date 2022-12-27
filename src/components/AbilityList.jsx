@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 import GetAbilityDescription from '../reuseables/GetAbilityDescription';
 import GetPokemonWithAbility from '../reuseables/GetPokemonWithAbility';
 import { useGetPokemonAbilitiesQuery } from '../redux/slices/pokemonApi';
 
 const AbilityList = () => {
-  const { data: abilitiesData } = useGetPokemonAbilitiesQuery();
   const [abilities, setAbilities] = useState([]);
+  const [isDescending, setIsDescending] = useState(false);
+
+  const { data: abilitiesData } = useGetPokemonAbilitiesQuery();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,8 +33,19 @@ const AbilityList = () => {
           <tr>
             <th
               scope='col'
-              className='text-[15px] lg:text-[17px] font-bold text-gray-900 p-3 text-left'>
+              className='text-[15px] lg:text-[17px] font-bold text-gray-900 p-3 text-left flex flex-row items-center gap-2'>
               Name
+              {!isDescending ? (
+                <AiFillCaretDown
+                  onClick={() => setIsDescending(!isDescending)}
+                  className='hover:cursor-pointer'
+                />
+              ) : (
+                <AiFillCaretUp
+                  onClick={() => setIsDescending(!isDescending)}
+                  className='hover:cursor-pointer'
+                />
+              )}
             </th>
             <th
               scope='col'
@@ -49,7 +63,15 @@ const AbilityList = () => {
           {abilities
             ?.slice(0, 327)
             .filter((ability) => ability?.effect_entries.length > 0)
-            .sort((a, b) => (a?.name.split('-').join(' ') < b?.name.split('-').join(' ') ? -1 : 1))
+            .sort((a, b) =>
+              !isDescending
+                ? a?.name.split('-').join(' ') < b?.name.split('-').join(' ')
+                  ? -1
+                  : 1
+                : a?.name.split('-').join(' ') > b?.name.split('-').join(' ')
+                ? -1
+                : 1
+            )
             .map((ability, index) => (
               <tr className='border-b' key={index}>
                 <td
