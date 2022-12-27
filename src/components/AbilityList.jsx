@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import GetAbilityDescription from '../reuseables/GetAbilityDescription';
 import GetPokemonWithAbility from '../reuseables/GetPokemonWithAbility';
@@ -8,6 +9,7 @@ import { useGetPokemonAbilitiesQuery } from '../redux/slices/pokemonApi';
 const AbilityList = () => {
   const { data: abilitiesData } = useGetPokemonAbilitiesQuery();
   const [abilities, setAbilities] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getAbility = async () => {
@@ -50,13 +52,15 @@ const AbilityList = () => {
             .sort((a, b) => (a?.name.split('-').join(' ') < b?.name.split('-').join(' ') ? -1 : 1))
             .map((ability, index) => (
               <tr className='border-b' key={index}>
-                <td className='p-3 text-[15px] font-bold capitalize'>
+                <td
+                  className='p-3 text-[15px] lg:text-[17px] font-bold capitalize hover:cursor-pointer hover:underline'
+                  onClick={() => navigate(`/ability/${ability?.name}`)}>
                   {ability?.name.split('-').join(' ')}
                 </td>
-                <td className='p-3 text-[15px] text-center'>
+                <td className='p-3 text-[15px] lg:text-[17px] text-center'>
                   <GetPokemonWithAbility ability={ability?.name} />
                 </td>
-                <td className='p-3 text-[15px]'>
+                <td className='p-3 text-[15px] lg:text-[16px]'>
                   <GetAbilityDescription ability={ability?.name} />
                 </td>
               </tr>
