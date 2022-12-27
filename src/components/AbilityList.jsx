@@ -6,7 +6,20 @@ import GetPokemonWithAbility from '../reuseables/GetPokemonWithAbility';
 import { useGetPokemonAbilitiesQuery } from '../redux/slices/pokemonApi';
 
 const AbilityList = () => {
-  const { data: abilities } = useGetPokemonAbilitiesQuery();
+  const { data: abilitiesData } = useGetPokemonAbilitiesQuery();
+  const [abilities, setAbilities] = useState([]);
+
+  useEffect(() => {
+    const getAbility = async () => {
+      abilitiesData?.results.map(
+        async (ability) =>
+          await axios
+            .get(`https://pokeapi.co/api/v2/ability/${ability?.name}`)
+            .then((res) => setAbilities((current) => [...current, res.data]))
+      );
+    };
+    getAbility();
+  }, []);
 
   return (
     <div className='overflow-x-auto'>
@@ -31,11 +44,12 @@ const AbilityList = () => {
           </tr>
         </thead>
         <tbody>
-          {abilities?.results
-            .slice(0, 327)
+          {abilities
+            ?.slice(0, 327)
+            .filter((ability) => ability?.effect_entries.length > 0)
             .sort((a, b) => (a?.name.split('-').join(' ') < b?.name.split('-').join(' ') ? -1 : 1))
-            .map((ability) => (
-              <tr className='border-b' key={ability?.name}>
+            .map((ability, index) => (
+              <tr className='border-b' key={index}>
                 <td className='p-3 text-[15px] font-bold capitalize'>
                   {ability?.name.split('-').join(' ')}
                 </td>
