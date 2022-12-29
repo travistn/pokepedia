@@ -32,7 +32,7 @@ const AbilityList = () => {
       <input
         placeholder='Search for an ability...'
         onChange={(e) => setSearch(e.currentTarget.value)}
-        className='pl-3 text-[15px] lg:text-[17px] rounded-md border-2 border-gray-300 h-[30px] lg:h-[40px]'
+        className='pl-3 text-[15px] lg:text-[17px] rounded-md border-2 border-gray-300 h-[30px] lg:h-[40px] lg:w-4/12'
       />
       <table className='w-full mt-4'>
         <thead className='border-b'>
