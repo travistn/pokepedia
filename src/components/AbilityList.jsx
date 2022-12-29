@@ -10,6 +10,7 @@ import { useGetPokemonAbilitiesQuery } from '../redux/slices/pokemonApi';
 const AbilityList = () => {
   const [abilities, setAbilities] = useState([]);
   const [isDescending, setIsDescending] = useState(false);
+  const [search, setSearch] = useState('');
 
   const { data: abilitiesData } = useGetPokemonAbilitiesQuery();
   const navigate = useNavigate();
@@ -28,7 +29,12 @@ const AbilityList = () => {
 
   return (
     <div className='overflow-x-auto'>
-      <table className='w-full'>
+      <input
+        placeholder='Search for an ability...'
+        onChange={(e) => setSearch(e.currentTarget.value)}
+        className='pl-3 text-[15px] lg:text-[17px] rounded-md border-2 border-gray-300 h-[30px] lg:h-[40px]'
+      />
+      <table className='w-full mt-4'>
         <thead className='border-b'>
           <tr>
             <th
@@ -62,7 +68,11 @@ const AbilityList = () => {
         <tbody>
           {abilities
             ?.slice(0, 327)
-            .filter((ability) => ability?.effect_entries.length > 0)
+            .filter((ability) =>
+              search !== ''
+                ? ability?.name.startsWith(search) && ability?.effect_entries.length > 0
+                : ability?.effect_entries.length > 0
+            )
             .sort((a, b) =>
               !isDescending
                 ? a?.name.split('-').join(' ') < b?.name.split('-').join(' ')
