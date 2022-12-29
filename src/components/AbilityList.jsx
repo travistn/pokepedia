@@ -25,7 +25,7 @@ const AbilityList = () => {
       );
     };
     getAbility();
-  }, []);
+  }, [abilitiesData]);
 
   return (
     <div className='overflow-x-auto'>
