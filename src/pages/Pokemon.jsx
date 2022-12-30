@@ -28,7 +28,7 @@ const Pokemon = () => {
       pokedex?.pokemon_entries.find((poke) => poke?.entry_number === pokemon?.id - 1)
     );
     setNextPokemon(pokedex?.pokemon_entries.find((poke) => poke?.entry_number === pokemon?.id + 1));
-  }, [pokemon?.id]);
+  }, [pokedex]);
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
