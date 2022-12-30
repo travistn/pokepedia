@@ -24,6 +24,11 @@ const PokedexDirectory = () => {
           <div className='flex flex-col gap-2'>
             <p
               className='font-bold hover:cursor-pointer hover:underline lg:text-[18px]'
+              onClick={() => navigate('/pokedex/national')}>
+              National Pokédex
+            </p>
+            <p
+              className='font-bold hover:cursor-pointer hover:underline lg:text-[18px]'
               onClick={() => navigate('/pokedex/kanto')}>
               Generation I{' '}
               <span className='text-[15px] lg:-[16px] font-normal opacity-70'>{'(Kanto)'}</span>

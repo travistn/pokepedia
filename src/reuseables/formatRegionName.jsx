@@ -6,6 +6,7 @@ export const formatRegionName = (region) => {
   if (region === 'unova') return 'original-unova';
   if (region === 'kalos') return 'kalos-central';
   if (region === 'alola') return 'original-alola';
+  if (region === 'national') return 'national';
 };
 
 export const formatRegionTitle = (region) => {
@@ -16,4 +17,5 @@ export const formatRegionTitle = (region) => {
   if (region === 'unova') return 'Unova Pokédex (Generation V)';
   if (region === 'kalos') return 'Kalos Pokédex (Generation VI)';
   if (region === 'alola') return 'Alola Pokédex (Generation VII)';
+  if (region === 'national') return 'National Pokédex';
 };
