@@ -12,10 +12,10 @@ const Pokedex = () => {
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
       <div className='w-11/12 lg:w-7/12 flex flex-col items-center mt-8'>
-        <div>
-          <h1 className='font-bold text-[18px] lg:text-[24px]'>{formatRegionTitle(pokeRegion)}</h1>
-        </div>
-        <div className='mt-8 rounded-md w-full bg-white p-4 lg:p-12'>
+        <div className='rounded-md w-full bg-white p-4 lg:p-12'>
+          <h1 className='font-bold text-[18px] lg:text-[26px] text-center mb-8'>
+            {formatRegionTitle(pokeRegion)}
+          </h1>
           <PokedexTable pokedex={pokedex?.pokemon_entries} />
         </div>
       </div>
