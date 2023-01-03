@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+import MoveData from '../components/MoveData';
 import { useGetPokemonMoveQuery } from '../redux/slices/pokemonApi';
 
 const Move = () => {
@@ -14,6 +15,7 @@ const Move = () => {
           <h1 className='capitalize text-center font-bold text-[24px]'>
             {move?.name.split('-').join(' ')}
           </h1>
+          <MoveData move={move} />
         </div>
       </div>
     </div>
