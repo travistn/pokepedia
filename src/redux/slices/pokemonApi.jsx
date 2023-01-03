@@ -36,6 +36,9 @@ export const pokemonApi = createApi({
     getPokemonAbilities: builder.query({
       query: () => 'ability?&limit=1000',
     }),
+    getPokemonMoves: builder.query({
+      query: () => 'move?&limit=1000',
+    }),
   }),
 });
 
@@ -48,4 +51,5 @@ export const {
   useGetPokeDexQuery,
   useGetPokemonAbilityQuery,
   useGetPokemonAbilitiesQuery,
+  useGetPokemonMovesQuery,
 } = pokemonApi;
