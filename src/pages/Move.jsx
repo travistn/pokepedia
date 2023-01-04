@@ -16,6 +16,10 @@ const Move = () => {
             {move?.name.split('-').join(' ')}
           </h1>
           <MoveData move={move} />
+          <div className='flex flex-col gap-2'>
+            <h1 className='font-bold text-[20px]'>Effect</h1>
+            <p className='text-[15px]'>{move?.effect_entries[0].effect}</p>
+          </div>
         </div>
       </div>
     </div>
