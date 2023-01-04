@@ -42,6 +42,9 @@ export const pokemonApi = createApi({
     getPokemonMove: builder.query({
       query: (move) => `move/${move}`,
     }),
+    getMoveTarget: builder.query({
+      query: (move) => `move-target/${move}`,
+    }),
   }),
 });
 
@@ -56,4 +59,5 @@ export const {
   useGetPokemonAbilitiesQuery,
   useGetPokemonMovesQuery,
   useGetPokemonMoveQuery,
+  useGetMoveTargetQuery,
 } = pokemonApi;
