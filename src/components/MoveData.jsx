@@ -25,7 +25,7 @@ const MoveData = ({ move }) => {
           <TypeCard type={move?.type} />
           <p className='capitalize'>{move?.damage_class.name}</p>
           <p>{move?.power !== null ? move?.power : 'N/A'}</p>
-          <p>{move?.accuracy}</p>
+          <p>{move?.accuracy !== null ? move?.accuracy : 'N/A'}</p>
           <p>{move?.pp}</p>
           <p>{getMoveContact(move?.damage_class.name)}</p>
         </div>
