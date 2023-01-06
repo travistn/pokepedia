@@ -10,6 +10,7 @@ import {
 } from '../redux/slices/pokemonApi';
 import PokedexData from '../components/PokedexData';
 import BaseStats from '../components/BaseStats';
+import MovesLearnedTable from '../components/MovesLearnedTable';
 
 const Pokemon = () => {
   const [previousPokemon, setPreviousPokemon] = useState();
@@ -80,6 +81,10 @@ const Pokemon = () => {
           <div className='bg-white w-full rounded-md p-4'>
             <BaseStats pokemon={pokemon} />
           </div>
+        </div>
+        <div className='bg-white w-full rounded-md p-4'>
+          <h1 className='text-center font-bold text-[18px]'>Moves Learned by Level Up</h1>
+          <MovesLearnedTable moves={pokemon?.moves} method='level-up' />
         </div>
       </div>
     </div>
