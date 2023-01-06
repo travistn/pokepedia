@@ -29,6 +29,9 @@ const MovesLearnedTable = ({ moves, method }) => {
     );
   }, [moves, method]);
 
+  console.log(movesData);
+  console.log(movesByMethod);
+
   return (
     <div className='overflow-x-auto'>
       <table className='w-full'>
@@ -61,8 +64,17 @@ const MovesLearnedTable = ({ moves, method }) => {
                 <td className='p-3 text-left text-[15px] capitalize '>
                   {move?.move.name.split('-').join(' ')}
                 </td>
-                <td>
+                <td className='p-3 text-left'>
                   <TypeCard type={movesData[index]?.type} />
+                </td>
+                <td className='p-3 text-left text-[15px] capitalize'>
+                  {movesData[index]?.damage_class.name}
+                </td>
+                <td className='p-3 text-left text-[15px]'>
+                  {movesData[index]?.power !== null ? movesData[index]?.power : 'N/A'}
+                </td>
+                <td className='p-3 text-left text-[15px]'>
+                  {movesData[index]?.accuracy !== null ? movesData[index]?.accuracy : 'N/A'}
                 </td>
               </tr>
             ))}
