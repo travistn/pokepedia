@@ -88,6 +88,12 @@ const Pokemon = () => {
           </h1>
           <MovesLearnedTable moves={pokemon?.moves} method='level-up' />
         </div>
+        <div className='bg-white w-full rounded-md p-4'>
+          <h1 className='text-center font-bold text-[18px] lg:text-[24px] mb-4'>
+            Moves Learned by TM (Technical Machine)
+          </h1>
+          <MovesLearnedTable moves={pokemon?.moves} method='machine' />
+        </div>
       </div>
     </div>
   );

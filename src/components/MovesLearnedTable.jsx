@@ -37,7 +37,9 @@ const MovesLearnedTable = ({ moves, method }) => {
       <table className='w-full'>
         <thead className='border-b'>
           <tr>
-            <th className='p-3 text-left text-[15px] lg:text-[16px]'>Lv.</th>
+            <th className='p-3 text-left text-[15px] lg:text-[16px]'>
+              {method === 'level-up' ? 'Lvl' : 'TM'}
+            </th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Move</th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Type</th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Cat.</th>
@@ -56,10 +58,10 @@ const MovesLearnedTable = ({ moves, method }) => {
             ?.map((move, index) => (
               <tr className='border-b' key={index}>
                 <td className='p-3 text-left text-[15px] lg:text-[16px]'>
-                  {
-                    move.version_group_details[move.version_group_details.length - 1]
-                      .level_learned_at
-                  }
+                  {method === 'level-up'
+                    ? move.version_group_details[move.version_group_details.length - 1]
+                        .level_learned_at
+                    : ''}
                 </td>
                 <td
                   className='p-3 text-left text-[15px] lg:text-[16px] capitalize text-[#4387cf] font-bold hover:underline hover:cursor-pointer'
