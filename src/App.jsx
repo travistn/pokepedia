@@ -10,6 +10,7 @@ import Type from './pages/Type';
 import AbilityDirectory from './pages/AbilityDirectory';
 import Ability from './pages/Ability';
 import Move from './pages/Move';
+import Items from './pages/Items';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/ability' element={<AbilityDirectory />} />
         <Route path='/ability/:abilityId' element={<Ability />} />
         <Route path='/move/:moveId' element={<Move />} />
+        <Route path='/items' element={<Items />} />
       </Routes>
     </>
   );
