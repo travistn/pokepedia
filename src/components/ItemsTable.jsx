@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ItemInfo from './ItemInfo';
+import ItemSprite from './ItemSprite';
 
 const ItemsTable = ({ items }) => {
   return (
@@ -8,9 +9,9 @@ const ItemsTable = ({ items }) => {
       <table className='w-full'>
         <thead className='border-b'>
           <tr>
-            <th className='p-3 text-left text-[15px]'>Name</th>
-            <th className='p-3 text-left text-[15px]'>Category</th>
-            <th className='p-3 text-left text-[15px]'>Effect</th>
+            <th className='p-4 text-left text-[15px]'>Name</th>
+            <th className='p-4 text-left text-[15px]'>Category</th>
+            <th className='p-4 text-left text-[15px]'>Effect</th>
           </tr>
         </thead>
         <tbody>
@@ -19,13 +20,16 @@ const ItemsTable = ({ items }) => {
             ?.sort((a, b) => (a?.name < b?.name ? -1 : 1))
             .map((item) => (
               <tr key={item?.name} className='border-b'>
-                <td className='capitalize p-3 text-left text-[15px] whitespace-nowrap'>
-                  {item?.name.split('-').join(' ')}
+                <td className='capitalize p-4 text-left text-[15px] whitespace-nowrap'>
+                  <div className='flex flex-row items-center gap-2'>
+                    <ItemSprite item={item?.name} />
+                    {item?.name.split('-').join(' ')}
+                  </div>
                 </td>
-                <td className='p-3 text-left text-[15px] whitespace-nowrap'>
+                <td className='p-4 text-left text-[15px] whitespace-nowrap'>
                   <ItemInfo item={item?.name} heading='category' />
                 </td>
-                <td className='p-3 text-left text-[15px]'>
+                <td className='p-4 text-left text-[15px]'>
                   <ItemInfo item={item?.name} heading='effect' />
                 </td>
               </tr>
