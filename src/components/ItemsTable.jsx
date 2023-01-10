@@ -6,9 +6,15 @@ import ItemSprite from './ItemSprite';
 
 const ItemsTable = ({ items }) => {
   const [isDescending, setIsDescending] = useState(false);
+  const [search, setSearch] = useState('');
 
   return (
     <div className='overflow-x-auto'>
+      <input
+        placeholder='Search for an item...'
+        onChange={(e) => setSearch(e.currentTarget.value.toLowerCase())}
+        className='pl-3 text-[15px] lg:text-[17px] rounded-md border-2 border-gray-300 h-[30px] lg:h-[40px] lg:w-4/12 mb-2'
+      />
       <table className='w-full'>
         <thead className='border-b'>
           <tr>
@@ -33,6 +39,7 @@ const ItemsTable = ({ items }) => {
         <tbody>
           {items
             ?.slice(0, 500)
+            .filter((item) => (search !== '' ? item?.name.startsWith(search) : item))
             ?.sort((a, b) =>
               !isDescending ? (a?.name < b?.name ? -1 : 1) : a?.name > b?.name ? -1 : 1
             )
