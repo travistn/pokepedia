@@ -16,9 +16,9 @@ const MovesLearnedTable = ({ moves, method }) => {
             </th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Move</th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Type</th>
-            <th className='p-3 text-left text-[15px] lg:text-[16px]'>Cat.</th>
+            <th className='p-3 text-left text-[15px] lg:text-[16px]'>Category</th>
             <th className='p-3 text-left text-[15px] lg:text-[16px]'>Power</th>
-            <th className='p-3 text-left text-[15px] lg:text-[16px]'>Acc.</th>
+            <th className='p-3 text-left text-[15px] lg:text-[16px]'>Accuracy</th>
           </tr>
         </thead>
         <tbody>
