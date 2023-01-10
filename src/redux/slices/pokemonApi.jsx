@@ -48,6 +48,9 @@ export const pokemonApi = createApi({
     getPokemonItems: builder.query({
       query: () => 'item?&limit=-1',
     }),
+    getPokemonItem: builder.query({
+      query: (item) => `item/${item}`,
+    }),
   }),
 });
 
@@ -64,4 +67,5 @@ export const {
   useGetPokemonMoveQuery,
   useGetMoveTargetQuery,
   useGetPokemonItemsQuery,
+  useGetPokemonItemQuery,
 } = pokemonApi;
