@@ -45,7 +45,9 @@ const Pokemon = () => {
               onClick={() => navigate(`/pokemon/${previousPokemon?.pokemon_species.name}`)}>
               <BiLeftArrowAlt className='lg:text-[18px] hover:cursor-pointer' />
               <p className='text-[15px] lg:text-[17px] capitalize hover:cursor-pointer hover:underline'>
-                {`#${previousPokemon?.entry_number} ${previousPokemon?.pokemon_species.name}`}
+                {pokemon?.id !== 1
+                  ? `#${previousPokemon?.entry_number} ${previousPokemon?.pokemon_species.name}`
+                  : ''}
               </p>
             </div>
             <div
