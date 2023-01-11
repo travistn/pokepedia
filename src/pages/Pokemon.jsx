@@ -12,6 +12,7 @@ import {
 import PokedexData from '../components/PokedexData';
 import BaseStats from '../components/BaseStats';
 import MovesLearnedTable from '../components/MovesLearnedTable';
+import EvolutionChart from '../components/EvolutionChart';
 
 const Pokemon = () => {
   const [previousPokemon, setPreviousPokemon] = useState();
@@ -85,11 +86,11 @@ const Pokemon = () => {
           </div>
         </div>
         <div className='bg-white w-full rounded-md p-4'>
-          <h1 className='text-center font-bold text-[20px] lg:text-[24px]'>Evolution Chain</h1>
+          <h1 className='text-center font-bold mb-4 text-[20px] lg:text-[24px]'>Evolution Chain</h1>
           {evolution?.chain.evolves_to.length > 0 ? (
-            <p></p>
+            <EvolutionChart evolution={evolution} />
           ) : (
-            <p className='capitalize mt-4 lg:text-[17px] text-center'>
+            <p className='capitalize lg:text-[17px] text-center'>
               {evolution?.chain.species.name}
               <span className='lowercase'>{' does not evolve.'}</span>
             </p>
