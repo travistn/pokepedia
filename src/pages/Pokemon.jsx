@@ -7,6 +7,7 @@ import {
   useGetPokemonGenerationQuery,
   useGetPokemonSpeciesQuery,
   useGetPokeDexQuery,
+  useGetPokemonEvolutionQuery,
 } from '../redux/slices/pokemonApi';
 import PokedexData from '../components/PokedexData';
 import BaseStats from '../components/BaseStats';
@@ -23,6 +24,7 @@ const Pokemon = () => {
   const { data: generation } = useGetPokemonGenerationQuery(pokemon?.id);
   const { data: species } = useGetPokemonSpeciesQuery(pokemon?.id);
   const { data: pokedex } = useGetPokeDexQuery('national');
+  const { data: evolution } = useGetPokemonEvolutionQuery(species?.evolution_chain.url.slice(42));
 
   useEffect(() => {
     setPreviousPokemon(
@@ -83,13 +85,24 @@ const Pokemon = () => {
           </div>
         </div>
         <div className='bg-white w-full rounded-md p-4'>
-          <h1 className='text-center font-bold text-[18px] lg:text-[24px] mb-4'>
+          <h1 className='text-center font-bold text-[20px] lg:text-[24px]'>Evolution Chain</h1>
+          {evolution?.chain.evolves_to.length > 0 ? (
+            <p></p>
+          ) : (
+            <p className='capitalize mt-4 lg:text-[17px] text-center'>
+              {evolution?.chain.species.name}
+              <span className='lowercase'>{' does not evolve.'}</span>
+            </p>
+          )}
+        </div>
+        <div className='bg-white w-full rounded-md p-4'>
+          <h1 className='text-center font-bold text-[20px] lg:text-[24px] mb-4'>
             Moves Learned by Level Up
           </h1>
           <MovesLearnedTable moves={pokemon?.moves} method='level-up' />
         </div>
         <div className='bg-white w-full rounded-md p-4'>
-          <h1 className='text-center font-bold text-[18px] lg:text-[24px] mb-4'>
+          <h1 className='text-center font-bold text-[20px] lg:text-[24px] mb-4'>
             Moves Learned by TM (Technical Machine)
           </h1>
           <MovesLearnedTable moves={pokemon?.moves} method='machine' />
