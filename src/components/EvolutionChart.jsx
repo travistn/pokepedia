@@ -7,8 +7,16 @@ import PokemonSprite from './PokemonSprite';
 const EvolutionChart = ({ evolution }) => {
   const navigate = useNavigate();
 
+  const getEvolveMethod = (method) => {
+    if (method?.min_level !== null) return `Level ${method?.min_level}`;
+    if (method?.min_happiness !== null) return 'High Friendship';
+    if (method?.item !== null) return method?.item.name.split('-').join(' ');
+    if (method?.trigger.name === 'trade') return 'Trade';
+    if (method?.known_move !== null) return method?.known_move.name.split('-').join(' ');
+  };
+
   return (
-    <div className='w-full flex flex-col lg:flex-row gap-4 lg:gap-8 items-center justify-center lg:items-baseline'>
+    <div className='w-full flex flex-col lg:flex-row gap-4 lg:gap-8 items-center justify-center lg:items-baseline lg:flex-wrap'>
       <div className='flex flex-row items-center justify-center'>
         <PokemonSprite pokemon={evolution?.chain.species.name} />
         <p
@@ -22,7 +30,7 @@ const EvolutionChart = ({ evolution }) => {
           <div className='flex flex-col gap-0 items-center justify-start'>
             <BsArrowDown className='text-[18px] lg:hidden' />
             <BsArrowRight className='hidden lg:flex lg:text-[20px]' />
-            <p className='text-[14px]'>{`(Level ${evo?.evolution_details[0].min_level})`}</p>
+            <p className='text-[14px] capitalize'>{getEvolveMethod(evo?.evolution_details[0])}</p>
           </div>
           <div className='flex flex-row items-center justify-center'>
             <PokemonSprite pokemon={evo?.species.name} />
@@ -38,7 +46,9 @@ const EvolutionChart = ({ evolution }) => {
                   <div className='flex flex-col gap-0 items-center justify-center'>
                     <BsArrowDown className='text-[18px] lg:hidden' />
                     <BsArrowRight className='hidden lg:flex lg:text-[20px]' />
-                    <p className='text-[14px]'>{`(Level ${thirdEvo?.evolution_details[0].min_level})`}</p>
+                    <p className='text-[14px] capitalize'>
+                      {getEvolveMethod(thirdEvo?.evolution_details[0])}
+                    </p>
                   </div>
                   <div className='flex flex-row items-center justify-center'>
                     <PokemonSprite pokemon={thirdEvo?.species.name} />
