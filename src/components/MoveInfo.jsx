@@ -30,6 +30,10 @@ const MoveInfo = ({ move, category }) => {
     if (category === 'accuracy') {
       return moveData?.accuracy !== null ? <p>{moveData?.accuracy}</p> : <p>{'N/A'}</p>;
     }
+
+    if (category === 'pp') {
+      return moveData?.pp !== null ? <p>{moveData?.pp}</p> : <p>{'N/A'}</p>;
+    }
   };
 
   return <>{getMoveInfo(category)}</>;
