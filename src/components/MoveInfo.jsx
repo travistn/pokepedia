@@ -34,6 +34,14 @@ const MoveInfo = ({ move, category }) => {
     if (category === 'pp') {
       return moveData?.pp !== null ? <p>{moveData?.pp}</p> : <p>{'N/A'}</p>;
     }
+
+    if (category === 'effect') {
+      return moveData?.effect_entries.length > 0 ? (
+        <p>{moveData?.effect_entries[0].short_effect}</p>
+      ) : (
+        ''
+      );
+    }
   };
 
   return <>{getMoveInfo(category)}</>;
