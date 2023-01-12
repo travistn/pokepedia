@@ -14,7 +14,7 @@ const Natures = () => {
         <div className='w-full flex flex-col gap-6 bg-white rounded-md p-4'>
           <h1 className='text-[24px] lg:text-[30px] font-bold text-center'>Pokémon Natures</h1>
           <div className='flex flex-col lg:flex-row w-full gap-8 mt-4 lg:mt-8'>
-            <div className='flex flex-col gap-8 lg:w-[55%]'>
+            <div className='flex flex-col gap-8 lg:w-[55%] lg:pl-4'>
               <div className='flex flex-col gap-4'>
                 <h1 className='font-bold text-[20px] lg:text-[28px]'>Description</h1>
                 <p className='text-[15px] lg:text-[16px]'>
@@ -44,6 +44,14 @@ const Natures = () => {
                     </div>
                   ))}
                 </div>
+                <p className='text-[15px] lg:text-[16px]'>
+                  The berry a Pokémon likes is the corresponding flavour of its raised stat, while
+                  the berry it dislikes is the flavour of its lowered stat.
+                </p>
+                <p className='text-[15px] lg:text-[16px]'>
+                  For example, a Pokémon of Sassy nature will like Bitter berries (Special Defense
+                  is raised) and dislike Sweet berries (Speed is lowered).
+                </p>
               </div>
             </div>
             <div className='flex flex-col gap-4 lg:w-[45%]'>
