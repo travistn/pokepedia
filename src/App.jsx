@@ -12,6 +12,7 @@ import Ability from './pages/Ability';
 import Moves from './pages/Moves';
 import Move from './pages/Move';
 import Items from './pages/Items';
+import Natures from './pages/Natures';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/moves' element={<Moves />} />
         <Route path='/move/:moveId' element={<Move />} />
         <Route path='/items' element={<Items />} />
+        <Route path='/natures' element={<Natures />} />
       </Routes>
     </>
   );

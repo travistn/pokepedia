@@ -48,6 +48,9 @@ const Navbar = () => {
             <Link to='/items' className='text-white text-[20px] hover:underline'>
               Items
             </Link>
+            <Link to='/natures' className='text-white text-[20px] hover:underline'>
+              Natures
+            </Link>
           </div>
         </div>
       </div>
@@ -69,6 +72,10 @@ const Navbar = () => {
             <div className='flex flex-row items-center gap-2'>
               <img src={pokeball} className='h-[18px]' />
               <Link to='/items'>Items</Link>
+            </div>
+            <div className='flex flex-row items-center gap-2'>
+              <img src={pokeball} className='h-[18px]' />
+              <Link to='/natures'>Natures</Link>
             </div>
           </div>
         </div>
