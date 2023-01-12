@@ -54,6 +54,9 @@ export const pokemonApi = createApi({
     getPokemonEvolution: builder.query({
       query: (id) => `evolution-chain/${id}`,
     }),
+    getPokemonNatures: builder.query({
+      query: () => 'nature?&limit=-1',
+    }),
   }),
 });
 
@@ -72,4 +75,5 @@ export const {
   useGetPokemonItemsQuery,
   useGetPokemonItemQuery,
   useGetPokemonEvolutionQuery,
+  useGetPokemonNaturesQuery,
 } = pokemonApi;
