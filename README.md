@@ -15,7 +15,8 @@ This app has a responsive web design so there is a desktop design and a mobile d
           <img src="https://user-images.githubusercontent.com/42354863/211959219-dcc7ad9a-9bbb-44e3-a4ca-68b35ef5f3f5.png" />
 </p>
           
-
+## Motivation
+The motivation behind this project was that I wanted to improve my skills on handling API data and translating that data into a clean UI. I also wanted to practice another technology handling global state management other than React Context, thus the implementation of Redux Toolkit Query in the project.
 
 ## Technologies Used
 * React.js
