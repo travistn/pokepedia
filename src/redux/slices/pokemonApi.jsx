@@ -60,6 +60,9 @@ export const pokemonApi = createApi({
     getPokemonNature: builder.query({
       query: (nature) => `nature/${nature}`,
     }),
+    getBerryFlavors: builder.query({
+      query: () => 'berry-flavor/',
+    }),
   }),
 });
 
@@ -80,4 +83,5 @@ export const {
   useGetPokemonEvolutionQuery,
   useGetPokemonNaturesQuery,
   useGetPokemonNatureQuery,
+  useGetBerryFlavorsQuery,
 } = pokemonApi;
