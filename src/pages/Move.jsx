@@ -25,7 +25,9 @@ const Move = () => {
             <div className='flex flex-col gap-6 lg:w-full'>
               <div className='flex flex-col gap-2'>
                 <h1 className='font-bold text-[20px] lg:text-[24px]'>Effect</h1>
-                <p className='text-[15px] lg:text-[16px]'>{move?.effect_entries[0].effect}</p>
+                <p className='text-[15px] lg:text-[16px]'>
+                  {move?.effect_entries[0].effect.replace('$effect_chance', move?.effect_chance)}
+                </p>
               </div>
               <div className='flex flex-col gap-2'>
                 <h1 className='font-bold text-[20px] lg:text-[24px]'>Move Target</h1>
