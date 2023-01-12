@@ -37,7 +37,12 @@ const MoveInfo = ({ move, category }) => {
 
     if (category === 'effect') {
       return moveData?.effect_entries.length > 0 ? (
-        <p>{moveData?.effect_entries[0].short_effect}</p>
+        <p>
+          {moveData?.effect_entries[0].short_effect.replace(
+            '$effect_chance',
+            moveData?.effect_chance
+          )}
+        </p>
       ) : (
         ''
       );
