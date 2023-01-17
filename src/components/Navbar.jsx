@@ -14,6 +14,10 @@ const Navbar = () => {
 
   const { data: pokemonList } = useGetAllPokemonQuery();
 
+  const formatResult = (pokemon) => {
+    return <p className='capitalize'>{pokemon?.name.split('-').join(' ')}</p>;
+  };
+
   useEffect(() => {
     setMenuIsOpen(false);
   }, [location]);
@@ -59,8 +63,9 @@ const Navbar = () => {
           <div className='w-[40%] lg:w-[25%] ml-auto mr-2 lg:mr-0'>
             <ReactSearchAutocomplete
               items={pokemonList?.results}
-              onSelect={(e) => navigate(`/pokemon/${e.name}`)}
+              onSelect={(pokemon) => navigate(`/pokemon/${pokemon?.name}`)}
               styling={{ height: '30px' }}
+              formatResult={formatResult}
             />
           </div>
         </div>
