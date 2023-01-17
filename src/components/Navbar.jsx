@@ -18,8 +18,16 @@ const Navbar = () => {
     return <p className='capitalize'>{pokemon?.name.split('-').join(' ')}</p>;
   };
 
+  const handleSearchClear = () => {
+    return '';
+  };
+
   useEffect(() => {
     setMenuIsOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    handleSearchClear();
   }, [location]);
 
   return (
@@ -66,6 +74,7 @@ const Navbar = () => {
               onSelect={(pokemon) => navigate(`/pokemon/${pokemon?.name}`)}
               styling={{ height: '30px' }}
               formatResult={formatResult}
+              inputSearchString={handleSearchClear}
             />
           </div>
         </div>
