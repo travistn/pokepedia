@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
+import { useGetAllPokemonQuery } from '../redux/slices/pokemonApi';
 import spheal from '../assets/spheal.png';
 import pokeball from '../assets/pokeball.png';
 
@@ -10,17 +12,19 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const { data: pokemonList } = useGetAllPokemonQuery();
+
   useEffect(() => {
     setMenuIsOpen(false);
   }, [location]);
 
   return (
     <>
-      <div className='h-[70px] lg:h-[90px] bg-[#0d293a] flex flex-row justify-center'>
-        <div className='flex flex-row items-center justify-center lg:justify-start w-[80%] lg:w-7/12'>
+      <div className='h-[70px] lg:h-[90px] bg-[#0d293a] flex flex-row justify-center items-center'>
+        <div className='flex flex-row items-center justify-center lg:justify-start w-full lg:w-7/12'>
           <GiHamburgerMenu
             color='white'
-            className='text-[20px] mr-8 lg:hidden'
+            className='text-[20px] mr-4 ml-4 lg:hidden'
             onClick={() => setMenuIsOpen(!menuIsOpen)}
           />
           <div className='flex flex-row items-center lg:pl-4'>
@@ -35,7 +39,7 @@ const Navbar = () => {
               onClick={() => navigate('/')}
             />
           </div>
-          <div className='hidden lg:flex flex-row gap-4 ml-10'>
+          <div className='hidden lg:flex flex-row gap-4 ml-10 items-center'>
             <Link to='/pokedex' className='text-white text-[20px] hover:underline'>
               Pokédex
             </Link>
@@ -51,6 +55,13 @@ const Navbar = () => {
             <Link to='/natures' className='text-white text-[20px] hover:underline'>
               Natures
             </Link>
+          </div>
+          <div className='w-[40%] lg:w-[25%] ml-auto mr-2 lg:mr-0'>
+            <ReactSearchAutocomplete
+              items={pokemonList?.results}
+              onSelect={(e) => navigate(`/pokemon/${e.name}`)}
+              styling={{ height: '30px' }}
+            />
           </div>
         </div>
       </div>
