@@ -11,7 +11,7 @@ const Natures = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <div className='w-10/12 lg:w-7/12 mt-8 flex flex-col gap-8'>
+      <div className='w-10/12 lg:w-7/12 mt-8 flex flex-col gap-8 items-center'>
         {isLoading ? (
           <Loading />
         ) : (

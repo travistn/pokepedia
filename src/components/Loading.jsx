@@ -1,10 +1,10 @@
 import React from 'react';
-import { PacmanLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 
 const Loading = () => {
   return (
     <>
-      <PacmanLoader color='#ee6767' />
+      <RingLoader color='#36d7b7' />
     </>
   );
 };
