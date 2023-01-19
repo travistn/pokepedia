@@ -30,7 +30,7 @@ const Ability = () => {
                 <p className='text-[15px] lg:text-[16px]'>{abilityEffect?.effect}</p>
               </div>
             </div>
-            <div className='flex flex-col gap-4 bg-white rounded-md p-4'>
+            <div className='flex flex-col gap-4 bg-white rounded-md p-4 w-full'>
               <h1 className='font-bold text-[20px] lg:text-[26px]'>
                 Pokémon with{' '}
                 <span className='capitalize'>{ability?.name.split('-').join(' ')}</span>
@@ -39,7 +39,7 @@ const Ability = () => {
                 pokemon={ability?.pokemon.filter((ability) => ability?.is_hidden === false)}
               />
             </div>
-            <div className='flex flex-col gap-4 bg-white rounded-md p-4'>
+            <div className='flex flex-col gap-4 bg-white rounded-md p-4 w-full'>
               <h1 className='font-bold text-[20px] lg:text-[26px] capitalize'>
                 {`${ability?.name.split('-').join(' ')} `}
                 <span className='lowercase'>as a hidden ability</span>
