@@ -9,7 +9,7 @@ const ItemsTable = ({ items }) => {
   const [search, setSearch] = useState('');
 
   return (
-    <div className='overflow-x-auto'>
+    <main className='overflow-x-auto'>
       <input
         placeholder='Search for an item...'
         onChange={(e) => setSearch(e.currentTarget.value.toLowerCase())}
@@ -61,7 +61,7 @@ const ItemsTable = ({ items }) => {
             ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

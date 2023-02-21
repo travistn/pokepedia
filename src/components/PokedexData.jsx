@@ -10,17 +10,17 @@ const PokedexData = ({ pokemon, species }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='flex flex-col gap-2 w-full'>
+    <main className='flex flex-col gap-2 w-full'>
       <h1 className='text-center text-[20px] lg:text-[24px] font-bold'>Pokédex Data</h1>
       <p className='font-bold lg:text-[18px]'>
         National No.<span className='font-normal'> {pokemon?.id}</span>
       </p>
-      <div className='flex flex-row gap-1 items-center'>
+      <section className='flex flex-row gap-1 items-center'>
         <p className='font-bold lg:text-[18px]'>Type:</p>
         {pokemon?.types.map((type) => (
           <TypeCard type={type.type} key={type?.type.name} />
         ))}
-      </div>
+      </section>
       <p className='flex flex-row gap-1 font-bold lg:text-[18px]'>
         Species:
         <span className='font-normal'>
@@ -35,9 +35,10 @@ const PokedexData = ({ pokemon, species }) => {
         Weight:
         <span className='font-normal'>{hectogramsToPounds(pokemon?.weight)} lbs.</span>
       </p>
-      <div className='flex flex-row items-center'>
+
+      <section className='flex flex-row items-center'>
         <p className='font-bold lg:text-[18px]'>Abilities:</p>
-        <div className='flex flex-col ml-2'>
+        <article className='flex flex-col ml-2'>
           {pokemon?.abilities.map((ability, index) => (
             <p
               key={index}
@@ -47,18 +48,18 @@ const PokedexData = ({ pokemon, species }) => {
                 (ability?.is_hidden === true ? '(hidden ability)' : '')}
             </p>
           ))}
-        </div>
-      </div>
+        </article>
+      </section>
       <p className='flex flex-row gap-1 font-bold lg:text-[18px]'>
         Capture rate:
         <span className='font-normal'>{species?.capture_rate}</span>
       </p>
-      <div className='flex flex-row'>
-        <div className='flex flex-row gap-1 font-bold lg:text-[18px]'>
+      <section className='flex flex-row'>
+        <section className='flex flex-row gap-1 font-bold lg:text-[18px]'>
           Gender: {getPokemonGenderRatio(species?.gender_rate)}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 };
 

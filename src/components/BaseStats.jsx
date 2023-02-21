@@ -5,35 +5,35 @@ import { getStatPercentage } from '../reuseables/getStatPercentage';
 
 const BaseStats = ({ pokemon }) => {
   return (
-    <div className='flex flex-col gap-1 lg:gap-2 w-full'>
+    <main className='flex flex-col gap-1 lg:gap-2 w-full'>
       <h1 className='text-center font-bold text-[20px] lg:text-[24px] mb-1'>Base Stats</h1>
       {pokemon?.stats.map((stat) => (
-        <div className='flex flex-row gap-1' key={stat?.stat.name}>
-          <div className={`flex flex-row items-center w-8/12 bg-${stat?.stat.name} pl-2 pr-2`}>
+        <article className='flex flex-row gap-1' key={stat?.stat.name}>
+          <article className={`flex flex-row items-center w-8/12 bg-${stat?.stat.name} pl-2 pr-2`}>
             <p className='font-bold text-[15px] lg:text-[17px]'>
               {formatStatName(stat?.stat.name)}
             </p>
             <p className='flex flex-row ml-auto font-bold text-[15px] lg:text-[17px]'>
               {stat?.base_stat}
             </p>
-          </div>
-          <div className={`bg-${stat?.stat.name} w-full p-1`}>
+          </article>
+          <article className={`bg-${stat?.stat.name} w-full p-1`}>
             <div
               className={`bg-${stat?.stat.name}-inner h-full border-[1px] border-${stat?.stat.name}-border`}
               style={{ width: `${getStatPercentage(stat?.base_stat)}%` }}
             />
-          </div>
-        </div>
+          </article>
+        </article>
       ))}
-      <div className='flex flex-row pl-2 pr-2 font-bold text-[15px] lg:text-[17px] w-[40.2%]'>
+      <section className='flex flex-row pl-2 pr-2 font-bold text-[15px] lg:text-[17px] w-[40.2%]'>
         <p>Total</p>
         <p className='ml-auto'>
           {pokemon?.stats
             .map((stat) => stat?.base_stat)
             .reduce((prevStat, currentStat) => prevStat + currentStat, 0)}
         </p>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

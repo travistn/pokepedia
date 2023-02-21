@@ -7,7 +7,7 @@ const MovesLearnedTable = ({ moves, method }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='overflow-x-auto'>
+    <main className='overflow-x-auto'>
       <table className='w-full'>
         <thead className='border-b'>
           <tr>
@@ -63,7 +63,7 @@ const MovesLearnedTable = ({ moves, method }) => {
             ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

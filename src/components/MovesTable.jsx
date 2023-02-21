@@ -11,7 +11,7 @@ const MovesTable = ({ moves }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='overflow-x-auto'>
+    <main className='overflow-x-auto'>
       <input
         placeholder='Search for a move...'
         onChange={(e) => setSearch(e.currentTarget.value.toLowerCase())}
@@ -77,7 +77,7 @@ const MovesTable = ({ moves }) => {
             ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

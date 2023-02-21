@@ -4,7 +4,7 @@ import NatureInfo from './NatureInfo';
 
 const NaturesTable = ({ natures }) => {
   return (
-    <div className='overflow-x-auto'>
+    <main className='overflow-x-auto'>
       <table className='w-full'>
         <thead className='border-b'>
           <tr>
@@ -32,7 +32,7 @@ const NaturesTable = ({ natures }) => {
             ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

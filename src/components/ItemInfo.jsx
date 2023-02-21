@@ -11,13 +11,13 @@ const ItemInfo = ({ item, heading }) => {
   };
 
   return (
-    <div>
+    <>
       {heading === 'category' ? (
         <p className='capitalize'>{itemData?.category.name.split('-').join(' ')}</p>
       ) : (
         <p>{getItemEffect(itemData)}</p>
       )}
-    </div>
+    </>
   );
 };
 

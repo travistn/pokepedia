@@ -28,7 +28,7 @@ const AbilityList = () => {
   }, [abilitiesData]);
 
   return (
-    <div className='overflow-x-auto'>
+    <main className='overflow-x-auto'>
       <input
         placeholder='Search for an ability...'
         onChange={(e) => setSearch(e.currentTarget.value.toLowerCase())}
@@ -99,7 +99,7 @@ const AbilityList = () => {
             ))}
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

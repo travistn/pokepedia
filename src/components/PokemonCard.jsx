@@ -7,7 +7,7 @@ const PokemonCard = ({ pokemon }) => {
   const navigate = useNavigate();
 
   return (
-    <div className='flex flex-col items-center'>
+    <article className='flex flex-col items-center'>
       <img
         src={pokemon?.sprites.other['official-artwork'].front_default}
         className='h-[170px] lg:h-[220px] hover:cursor-pointer hover:opacity-90'
@@ -18,17 +18,17 @@ const PokemonCard = ({ pokemon }) => {
         onClick={() => navigate(`/pokemon/${pokemon?.id}`)}>
         {`#${pokemon?.id}`}
       </p>
-      <h4
+      <h1
         className='capitalize text-blue-600 font-bold text-[18px] lg:text-[22px] hover:underline hover:cursor-pointer'
         onClick={() => navigate(`/pokemon/${pokemon?.name}`)}>
         {pokemon?.name}
-      </h4>
-      <div className='flex flex-row gap-1 mt-1'>
+      </h1>
+      <article className='flex flex-row gap-1 mt-1'>
         {pokemon?.types.map((type) => (
           <TypeCard type={type?.type} key={type?.type.name} />
         ))}
-      </div>
-    </div>
+      </article>
+    </article>
   );
 };
 

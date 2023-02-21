@@ -10,7 +10,7 @@ const PokedexTypeCard = ({ pokemon }) => {
   return (
     <div className='w-full text-center'>
       {pokedexData?.types.length > 1 ? (
-        <div className='flex flex-row'>
+        <section className='flex flex-row'>
           {pokedexData?.types.map((type) => (
             <p
               key={type?.type.name}
@@ -19,15 +19,15 @@ const PokedexTypeCard = ({ pokemon }) => {
               {type?.type.name}
             </p>
           ))}
-        </div>
+        </section>
       ) : (
-        <div>
+        <section>
           <p
             className={`w-full bg-${pokedexData?.types[0].type.name} capitalize text-white p-2 lg:text-[16px] hover:cursor-pointer`}
             onClick={() => navigate(`/type/${pokedexData?.types[0].type.name}`)}>
             {pokedexData?.types[0].type.name}
           </p>
-        </div>
+        </section>
       )}
     </div>
   );
