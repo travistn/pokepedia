@@ -9,16 +9,16 @@ const Items = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <div className='w-10/12 lg:w-7/12 mt-8 flex flex-col gap-8 items-center'>
+      <main className='w-10/12 lg:w-7/12 mt-8 flex flex-col gap-8 items-center'>
         {isLoading ? (
           <Loading />
         ) : (
-          <div className='w-full flex flex-col gap-6 bg-white rounded-md p-4'>
+          <article className='w-full flex flex-col gap-6 bg-white rounded-md p-4'>
             <h1 className='text-[24px] lg:text-[30px] font-bold text-center'>Pokémon Items</h1>
             <ItemsTable items={items?.results} />
-          </div>
+          </article>
         )}
-      </div>
+      </main>
     </div>
   );
 };
