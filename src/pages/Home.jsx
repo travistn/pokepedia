@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div className='min-h-screen flex flex-col items-center bg-sky-blue lg:bg-poke-bg bg-no-repeat bg-contain'>
-      <main className='flex flex-col mt-8 w-10/12 lg:w-7/12 items-center gap-8 lg:bg-dark-light-blue lg:p-8 lg:rounded-md'>
+      <main className='flex flex-col mt-8 w-10/12 items-center gap-8 lg:bg-dark-light-blue lg:p-8 lg:rounded-md xl:w-7/12'>
         <section className='bg-white rounded-md p-4 w-full lg:text-center lg:w-11/12'>
           <h1 className='font-bold lg:text-[20px]'>
             Welcome to PokéPedia!{' '}

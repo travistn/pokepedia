@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='h-[70px] lg:h-[90px] bg-[#0d293a] flex flex-row justify-center items-center'>
-        <section className='flex flex-row items-center justify-center lg:justify-start w-full lg:w-7/12'>
+        <section className='flex flex-row items-center justify-center lg:justify-start w-full lg:px-6 xl:px-0 xl:w-7/12'>
           <GiHamburgerMenu
             color='white'
             className='text-[20px] mr-4 ml-4 lg:hidden'
